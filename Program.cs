@@ -56,6 +56,35 @@ namespace Inheritance
                 $" with {furColor} fur.");
         }
     }
+
+    class Cow : Animal
+    {
+        public string country;
+        public int age;
+        public string furColor;
+
+        public Cow()
+            : base()
+        {
+            country = string.Empty;
+            age = 0;
+            furColor = string.Empty;
+        }
+
+        public Cow(string name, string country, int age, string furColor)
+            : base(name)
+        {
+            this.country = country;
+            this.age = age;
+            this.furColor = furColor;
+        }
+
+        public void display()
+        {
+            Console.WriteLine($"My name is {name}, I am a {age} year old cow from {country}" +
+                $" with {furColor} fur.");
+        }
+    }
     class Program
     {
         static void Main(string[] args)
@@ -77,6 +106,15 @@ namespace Inheritance
             Monkey newMonkey = new Monkey("Gregory", "China", 5, "White");
             newMonkey.display();
 
+            Cow myCow = new Cow();
+            myCow.name = "Bessie";
+            myCow.country = "USA";
+            myCow.age = 2;
+            myCow.furColor = "Brown";
+            myCow.display();
+
+            Cow newCow = new Cow("Milton", "Germany", 7, "black and white");
+            newCow.display();
         }
 
     }
